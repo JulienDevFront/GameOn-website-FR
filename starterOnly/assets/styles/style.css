@@ -1,26 +1,44 @@
+/* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */
+/* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */ /* root config */
 :root {
     --font-default: "DM Sans", Arial, Helvetica, sans-serif;
     --font-slab: var(--font-default);
     --modal-duration: 0.8s;
+    --text-color-black: #000000;
+    --text-color-white: #ffffff;
+    --background-color-primary: #ff0000;
+    --font-size: clamp(0.75rem, 1.5vw, 1.125rem); /* [12px : 16px : 18px] */
 }
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */
+/* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */
+.content-body {
+    width: 1440px;
+    padding: 50px 100px;
 }
-/* Landing Page */
-
-body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    /* background-image: url("background.png"); ⚠︎ image no found ⚠︎ */
-    font-family: var(--font-default);
-    font-size: 18px;
-    max-width: 1300px;
-    margin: 0 auto;
+/* media desktop : [1025px : 1440px] */ /* media desktop : [1025px : 1440px] */
+/* media desktop : [1025px : 1440px] */ /* media desktop : [1025px : 1440px] */
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .content-body {
+        width: 100%;
+        padding: 50px 100px;
+    }
 }
-
+/* media laptop : [769px : 1024px] */ /* media laptop : [769px : 1024px] */
+/* media laptop : [769px : 1024px] */ /* media laptop : [769px : 1024px] */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .content-body {
+        width: 100%;
+        padding: 50px 80px;
+    }
+}
+/* media mobile : [ui < 0px : 768px] */ /* media mobile : [ui < 0px : 768px] */
+/* media mobile : [ui < 0px : 768px] */ /* media mobile : [ui < 0px : 768px] */
+@media only screen and (max-width: 768px) {
+    .content-body {
+        width: 100%;
+        padding: 50px 30px;
+    }
+}
 p {
     margin-bottom: 0;
     padding: 0.5vw;
@@ -29,79 +47,84 @@ p {
 img {
     padding-right: 1rem;
 }
-
-.topnav {
-    overflow: hidden;
-    margin: 3.5%;
+/* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */
+/* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */ /* Header */
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
 }
-.header-logo {
-    float: left;
+.header__ctn-link-home {
+    width: initial;
+    cursor: pointer;
 }
-.main-navbar {
-    float: right;
+.header__ctn-link-home__img {
+    width: 100%;
+    margin: 5px 1rem 5px 0px;
 }
-.topnav a {
-    float: left;
-    display: block;
-    color: #000000;
-    text-align: center;
-    padding: 12px 12px;
-    margin: 5px;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: Roboto, sans-serif;
-}
-
-.topnav a:hover {
-    background-color: #ff0000;
-    color: #ffffff;
-    border-radius: 15px;
-}
-
-.topnav a.active {
-    background-color: #ff0000;
-    color: #ffffff;
-    border-radius: 15px;
-}
-
-.topnav .icon {
+/* button hamburger toggle menu */ /* button hamburger toggle menu */
+/* button hamburger toggle menu */ /* button hamburger toggle menu */
+.header__btn-toggle-nav {
     display: none;
 }
-
-@media screen and (max-width: 768px) {
-    .topnav a {
+/* Nav */ /* Nav */
+/* Nav */ /* Nav */
+.header__nav {
+    width: initial;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+.header__nav__link {
+    display: block;
+    padding: 12px 22px;
+    border-radius: 15px;
+    font-size: var(--font-size);
+    color: var(--text-color-black);
+    font-family: var(--font-default);
+    text-decoration: none;
+}
+.header__nav__link--active,
+.header__nav__link--activeDefault {
+    color: var(--text-color-white);
+    text-decoration: underline;
+    background-color: var(--background-color-primary);
+}
+/* header media mobile : [ui < 0px : 768px] */ /* header media mobile : [ui < 0px : 768px] */
+/* header media mobile : [ui < 0px : 768px] */ /* header media mobile : [ui < 0px : 768px] */
+@media only screen and (max-width: 768px) {
+    .header {
+        align-items: flex-end;
+    }
+    .header__ctn-link-home {
+        max-width: 130px;
+    }
+    .header__btn-toggle-nav {
+        display: block;
+        margin-bottom: 5px;
+        padding: 8px;
+        border: none;
+        color: var(--background-color-primary);
+        background-color: var(--text-color-white);
+    }
+    .header__btn-toggle-nav--active {
+        border-radius: 8px;
+        color: var(--text-color-white);
+        background-color: var(--background-color-primary);
+    }
+    .header__nav {
         display: none;
     }
-    .topnav a.icon {
-        float: right;
-        display: block;
+    .header__nav--active {
+        display: flex;
+        width: 100%;
+        margin-top: 8px;
+        flex-direction: column;
     }
-}
-
-@media screen and (max-width: 768px) {
-    .topnav.responsive {
-        position: relative;
-    }
-    .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-    .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-}
-
-@media screen and (max-width: 540px) {
-    .topnav a {
-        display: none;
-    }
-    .topnav a.icon {
-        float: right;
-        display: block;
-        margin-top: -15px;
+    .header__nav__link {
+        text-decoration: none;
     }
 }
 
