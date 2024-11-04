@@ -28,24 +28,29 @@
                     <a href="#" class="header__nav__link"><span>Évènements passés</span></a>
                 </nav>
             </header>
-            <!--
-            <main>
-                <div class="hero-section">
-                    <div class="hero-content">
-                        <h1 class="hero-headline">
-                            Marathon national<br />
-                            de jeux vidéos
+            <!-- "main" element modifed, see the commit : "debugging media queries" -->
+            <main class="main">
+                <section class="main__sectionRegisterIntroduce">
+                    <div class="main__sectionRegisterIntroduce__ctn">
+                        <h1 class="main__sectionRegisterIntroduce__ctn__title">
+                            <span class="main__sectionRegisterIntroduce__ctn__title__txt">Marathon national</span>
+                            <span class="main__sectionRegisterIntroduce__ctn__title__txt">de jeux vidéos</span>
                         </h1>
-                        <p class="hero-text">Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !</p>
-                        <button class="btn-signup modal-btn">je m'inscris</button>
+                        <p class="main__sectionRegisterIntroduce__paragraph">
+                            Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
+                        </p>
+                        <div class="main__sectionRegisterIntroduce__ctn-img">
+                            <img
+                                class="main__sectionRegisterIntroduce__ctn-img__img"
+                                src="./assets/images/bg_img.jpg"
+                                alt="Image d'une joueuse à l'événement"
+                            />
+                        </div>
+                        <button class="main__sectionRegisterIntroduce__btn-register button--red">Je M'inscris</button>
                     </div>
-                    <div class="hero-img">
-                        <img src="./assets/images/bg_img.jpg" alt="img" />
-                    </div>
-                    <button class="btn-signup modal-btn">je m'inscris</button>
-                </div>
+                </section>
 
-                <div class="bground">
+                <!--<div class="bground">
                     <div class="content">
                         <span class="close"></span>
                         <div class="modal-body">
@@ -122,12 +127,11 @@
                             </form>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </main>
-            <footer>
-                <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
+            <footer class="footer">
+                <p class="footer__copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
             </footer>
-            -->
         </div>
         <script type="module" src="./javascript/index.js"></script>
     </body>
