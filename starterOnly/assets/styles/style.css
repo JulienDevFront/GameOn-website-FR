@@ -9,6 +9,7 @@
     --background-color-primary: #ff0000;
     --background-color-secondary: #232323;
     --background-color-tertiary: #ffffff;
+    --background-color-quaternary: #3876ac;
     --font-size: clamp(0.75rem, 1.5vw, 1.125rem); /* [12px : 16px : 18px] */
     --font-size--medium: clamp(1rem, 1.5vw, 1.5rem);
     --font-size--h1: clamp(4rem, 8vw, 6rem);
@@ -180,7 +181,19 @@
     color: var(--text-color-white);
     z-index: 1;
 }
-.button--red {
+.main__sectionRegisterIntroduce__ctn-img {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 60%;
+    height: 100%;
+}
+.main__sectionRegisterIntroduce__ctn-img__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.button--open-modal-register {
     width: 30%;
     height: 50px;
     display: flex;
@@ -193,20 +206,12 @@
     background: var(--background-color-primary);
     cursor: pointer;
     z-index: 1;
+    /* animation */ /* animation */
+    /* animation */ /* animation */
+    transition: background-color 300ms ease-in-out;
 }
-/* container img */ /* container img */
-/* container img */ /* container img */
-.main__sectionRegisterIntroduce__ctn-img {
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    width: 60%;
-    height: 100%;
-}
-.main__sectionRegisterIntroduce__ctn-img__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.button--open-modal-register:hover {
+    background-color: var(--background-color-quaternary);
 }
 /* media desktop : [1025px : 1439px] */ /* media desktop : [1025px : 1439px] */
 /* media desktop : [1025px : 1439px] */ /* media desktop : [1025px : 1439px] */
@@ -245,11 +250,6 @@
         margin-bottom: 0px;
         color: var(--text-color-black);
     }
-    .button--red {
-        width: 140px;
-        height: 30px;
-        align-self: center;
-    }
     .main__sectionRegisterIntroduce__ctn-img {
         position: relative;
         width: 100%;
@@ -261,35 +261,19 @@
         height: 100%;
         border-radius: 0.5rem;
     }
-}
-/* end of the commit : debugging media queries */
-.modal-btn {
-    font-size: 145%;
-    background: #fe142f;
-    display: flex;
-    margin: auto;
-    padding: 2em;
-    color: #fff;
-    padding: 0.75rem 2.5rem;
-    border-radius: 1rem;
-    cursor: pointer;
-}
-
-.modal-btn:hover {
-    background: #3876ac;
-}
-
-/* Modal form */
-
-.button:hover {
-    background: #3876ac;
+    .button--open-modal-register {
+        width: 140px;
+        height: 30px;
+        align-self: center;
+    }
 }
 
 .smFont {
     font-size: 16px;
 }
-
-.bground {
+/* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */
+/* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */ /* modal register */
+.modal-register {
     display: none;
     position: fixed;
     z-index: 1;
@@ -297,8 +281,11 @@
     top: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
     background-color: rgba(26, 39, 156, 0.4);
+    overflow: auto;
+}
+.modal-register--activate {
+    display: block;
 }
 
 .content {
@@ -428,7 +415,7 @@ input[data-error]::after {
     left: 21%;
     top: 19%;
 }
-.close {
+.button--close-modal-register {
     position: absolute;
     right: 15px;
     top: 15px;
@@ -438,8 +425,8 @@ input[data-error]::after {
     cursor: pointer;
     transform: scale(0.7);
 }
-.close:before,
-.close:after {
+.button--close-modal-register:before,
+.button--close-modal-register:after {
     position: absolute;
     left: 15px;
     content: " ";
@@ -447,10 +434,10 @@ input[data-error]::after {
     width: 3px;
     background-color: #fff;
 }
-.close:before {
+.button--close-modal-register:before {
     transform: rotate(45deg);
 }
-.close:after {
+.button--close-modal-register:after {
     transform: rotate(-45deg);
 }
 .btn-submit,
@@ -522,7 +509,7 @@ input[data-error]::after {
     z-index: 99;
 }
 
-/* Hide the items when the select box is closed: */
+/* Hide the items when the select box is button--close-modal-registerd: */
 .select-hide {
     display: none;
 }
