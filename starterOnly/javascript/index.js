@@ -1,6 +1,6 @@
-import { topNavEventLink } from "./topNavEventLink.js";
-import { topNavMenuToggle } from "./topNavMenuToggle.js";
-import { modalRegisterDisplay } from "./modalRegisterDisplay.js";
+import { topNavEventLink } from "./interface/topNavEventLink.js";
+import { topNavMenuToggle } from "./interface/topNavMenuToggle.js";
+import { modalRegisterDisplay } from "./interface/modalRegisterDisplay.js";
 
 topNavEventLink();
 topNavMenuToggle();
