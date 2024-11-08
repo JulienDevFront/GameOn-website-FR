@@ -3,9 +3,12 @@
 :root {
     --font-default: "DM Sans", Arial, Helvetica, sans-serif;
     --font-slab: var(--font-default);
+    --font-msgErr: "Roboto", sans-serif;
     --modal-duration: 0.8s;
     --text-color-black: #000000;
     --text-color-white: #ffffff;
+    --text-color-msgErr: #ff4e60;
+    --text-color-msgValidate: #279e7a;
     --background-color-primary: #ff0000;
     --background-color-secondary: #232323;
     --background-color-tertiary: #ffffff;
@@ -14,6 +17,7 @@
     --font-size--medium: clamp(1rem, 1.5vw, 1.5rem);
     --font-size--h1: clamp(4rem, 8vw, 6rem);
     --font-size--h1-mobile: clamp(2rem, 8vw, 6rem);
+    --font-size--msgErrInputs: 0.625rem;
 }
 /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */
 /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */ /* content config */
@@ -113,7 +117,6 @@
         margin-bottom: 5px;
         padding: 8px;
         color: var(--background-color-primary);
-        border: none;
         background-color: var(--text-color-white);
     }
     .header__btn-toggle-nav--active {
@@ -423,11 +426,13 @@ input[data-error]::after {
     height: 32px;
     opacity: 1;
     cursor: pointer;
+    background-color: var(--background-color-secondary);
     transform: scale(0.7);
 }
 .button--close-modal-register:before,
 .button--close-modal-register:after {
     position: absolute;
+    top: 0%;
     left: 15px;
     content: " ";
     height: 33px;
@@ -523,6 +528,25 @@ input[data-error]::after {
     font-weight: normal;
     font-size: 16px;
 }
+/* msgErr for inputs */ /* msgErr for inputs */
+/* msgErr for inputs */ /* msgErr for inputs */
+.msgErr {
+    display: none;
+}
+.msgErr--active {
+    display: block;
+    font-family: var(--font-msgErr);
+    font-size: var(--font-size--msgErrInputs);
+    font-weight: 400;
+    color: var(--text-color-msgErr);
+}
+.input--err {
+    border: 2px solid var(--text-color-msgErr);
+}
+.input--valueValidate {
+    border: 2px solid var(--text-color-msgValidate);
+}
+
 /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */
 /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */ /* footer */
 .footer {
