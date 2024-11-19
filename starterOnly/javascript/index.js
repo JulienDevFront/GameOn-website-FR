@@ -1,13 +1,19 @@
-// "modules" for the interfacer user
-import { topNavEventLink } from "./interface/topNavEventLink.js";
-import { topNavMenuToggle } from "./interface/topNavMenuToggle.js";
-import { modalRegisterDisplay } from "./interface/modalRegisterDisplay.js";
+/** JS.DOC
+ * @import importe les modules relatifs
+ * à l'interface utilisateur.
+ */
+import { navEventLinks } from "./interface/navEventLinks.js";
+import { displayMenuToggle } from "./interface/displayMenuToggle.js";
+import { displayRegistrationModal } from "./interface/displayRegistrationModal.js";
 
-topNavEventLink();
-topNavMenuToggle();
-modalRegisterDisplay();
+navEventLinks();
+displayMenuToggle();
+displayRegistrationModal();
 
-// "modules" for the form of register event
-import { formRegisterEvent } from "./setting/formRegisterEvent.js";
+/** JS.DOC
+ * @import importe le module contenant la logique
+ * du formulaire  d'inscription  à un  événement.
+ */
+import { formRegistrationEvent } from "./setting/formRegistrationEvent.js";
 
-formRegisterEvent();
+formRegistrationEvent();
